@@ -1,15 +1,23 @@
 <template>
+  <div id="overview">
 
-  <div id="overview"></div>
-
+  </div>
 </template>
 
 <script lang="ts">
 
-import {Vue} from "vue-property-decorator";
+import {Component, Vue} from "vue-property-decorator";
+import axios from "axios";
 
+@Component({
+  async created() {
+    await axios({
+      method: "get",
+      url: '/login',
+    }).then().catch()
+  }
+})
 export default class Overview extends Vue {
-
 }
 
 </script>
